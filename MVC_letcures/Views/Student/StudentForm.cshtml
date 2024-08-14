@@ -1,4 +1,7 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@using MVC_letcures.Models
+@model Student
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Student Form</title>
 </head>
@@ -26,17 +29,20 @@
          >>Or neeche jo input k tag mai name= "?" yahan jo bhi likho ge wahi app k studentController k
          mai jis function mai app ye recive kre ge us k parameters k name bhi yahi hone chahiye otherwise error
         -->
-        <label for="Name">Name:</label><br>
-        <input type="text" id="name" name="Name"><br>
+        <!--Using Tag Helpers it ease us in maintaining HTML and helps in this cause and automatically generate 
+            HTML when it reaches the client end Basically taghelpers are server side code
+        -->
+        <label asp-for="Name"></label><br>
+        <input asp-for="Name"><br>
 
-        <label for=" Rollno">Rollno:</label><br>
-        <input type="text" id="Rollno" name="Rollno"><br>
+        <label asp-for="Rollno"></label><br>
+        <input asp-for="Rollno"><br>
 
-        <label for="age ">Age:</label><br>
-        <input type="text" id="age" name="age"><br>
+        <label asp-for="Age"></label><br>
+        <input asp-for="Age"><br>
 
-        <label for="CGPA">CGPA:</label><br />
-        <input type="text" id="cgpa" name="cgpa" /><br />
+        <label asp-for="CGPA"></label><br />
+        <input asp-for="CGPA" /><br />
         @* <p><span>
             <style>
             p{

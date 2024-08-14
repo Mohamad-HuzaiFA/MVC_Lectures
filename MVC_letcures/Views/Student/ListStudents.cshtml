@@ -1,0 +1,33 @@
+﻿@model List<MVC_letcures.Models.Student>  
+@{
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+
+<!-- Yahan ooper agr list show karani hai to us ko phir list ki form mai hi strongly typed kre ge-->
+
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Rollno</th>
+            <th>Age</th>
+            <th>CGPA</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(MVC_letcures.Models.Student student in Model)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.Rollno</td>
+                <td>@student.Age</td>
+                <td>@student.CGPA</td>
+            </tr>
+
+        }
+    </tbody>
+
+
+</table>

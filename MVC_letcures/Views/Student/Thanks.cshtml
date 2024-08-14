@@ -1,0 +1,13 @@
+﻿@model MVC_letcures.Models.Student
+@{
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+
+<p>You Entered Following Details</p>
+
+<p>@Model.Rollno</p>
+<p>@Model.Name</p>
+<p>@Model.Age</p>
+<p>@Model.CGPA</p>
+
+<p>Click <a asp-action="ListStudents">Here</a>to View all Students</p>  <!--  Add karne k bad wo ListStudents k page pr chala jae-->

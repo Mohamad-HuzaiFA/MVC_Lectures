@@ -26,18 +26,30 @@ namespace MVC_letcures.Controllers
             return View();
         }
         [HttpPost] //When post request from client end
-        public ViewResult StudentForm(string Name, string Rollno, int age, float cgpa)
-        {
-            Student temp = new Student();
-            temp.Name = Name;
-            temp.Rollno = Rollno;
-            temp.Age = age;
-            temp.CGPA = cgpa;
+        //public ViewResult StudentForm(string Name, string Rollno, int age, float cgpa)
+        //{
+        //    Student temp = new Student();
+        //    temp.Name = Name;
+        //    temp.Rollno = Rollno;
+        //    temp.Age = age;
+        //    temp.CGPA = cgpa;
 
-            temp.AddStudent(temp);
-            //string msg = "Student Added";
-            return View();
+        //    temp.AddStudent(temp);
+        //    //string msg = "Student Added";
+        //    return View();
+        //    //Console.WriteLine($"name = {Name},Rollno = {Rollno},Age = {age}, CGPA = {cgpa}");
+        //}
+        public ViewResult StudentForm(Student s)
+        {
+            StudentRepository.AddStudentsInMemory(s);
+
+            return View("Thanks",s);
             //Console.WriteLine($"name = {Name},Rollno = {Rollno},Age = {age}, CGPA = {cgpa}");
+        }
+
+        public ViewResult ListStudents()
+        {
+            return View("ListStudents",StudentRepository.listOfStu);
         }
 
         
