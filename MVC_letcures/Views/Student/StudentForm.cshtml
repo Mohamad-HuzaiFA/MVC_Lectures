@@ -1,0 +1,56 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Student Form</title>
+</head>
+<style>
+
+    .container
+    {
+        background-color: #F5F5DC; /* Light yellow background */
+        width: 25%; /* Set the width of the form */
+        margin: 50px auto; /* Center the form horizontally and add some top margin */
+        padding: 20px; /* Add some padding inside the form */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    }
+
+</style>
+
+<body>
+    <h1>Add a Student</h1>
+    <div class="container">
+        <div>
+        <form method="post" action="/Student/StudentForm">
+        <!--Yahan method usuually submit k liye post hi use hota or
+         >>action ye btata k app ko information jo user client end pr browser mai form pr enter kre ga wo kahan store karni hai
+         >>Or neeche jo input k tag mai name= "?" yahan jo bhi likho ge wahi app k studentController k
+         mai jis function mai app ye recive kre ge us k parameters k name bhi yahi hone chahiye otherwise error
+        -->
+        <label for="Name">Name:</label><br>
+        <input type="text" id="name" name="Name"><br>
+
+        <label for=" Rollno">Rollno:</label><br>
+        <input type="text" id="Rollno" name="Rollno"><br>
+
+        <label for="age ">Age:</label><br>
+        <input type="text" id="age" name="age"><br>
+
+        <label for="CGPA">CGPA:</label><br />
+        <input type="text" id="cgpa" name="cgpa" /><br />
+        @* <p><span>
+            <style>
+            p{
+                color:red;
+                             }
+                             </style>
+                             </span>@Model</p> *@
+
+         <input type="submit" value="Save Student">
+            </form>
+        </div>
+    </div>
+
+    
+
+</body>
+</html>
