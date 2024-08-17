@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Student Form</title>
+    <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <style>
 
@@ -32,18 +33,30 @@
         <!--Using Tag Helpers it ease us in maintaining HTML and helps in this cause and automatically generate 
             HTML when it reaches the client end Basically taghelpers are server side code
         -->
+        <div asp-validation-summary="ModelOnly"></div>  <!--"ALL" Iss tag se saare error shuru mai show ho ge
+                                                             "ModelOnly" se sirf generic msg show ho ga   
+        -->
+        <div>
         <label asp-for="Name"></label><br>
         <input asp-for="Name"><br>
-
+        <span asp-validation-for="Name"></span>  <!--Iss se us field k ander show ho ga msg-->
+                </div>
+                <div>
         <label asp-for="Rollno"></label><br>
         <input asp-for="Rollno"><br>
-
+        <span asp-validation-for="Rollno"></span>  <!--Iss se us field k ander show ho ga msg-->
+                </div>
+                <div>
         <label asp-for="Age"></label><br>
         <input asp-for="Age"><br>
-
+        <span asp-validation-for="Age"></span>  <!--Iss se us field k ander show ho ga msg-->
+                </div>
+                <div>
         <label asp-for="CGPA"></label><br />
         <input asp-for="CGPA" /><br />
-        @* <p><span>
+        <span asp-validation-for="CGPA"></span>  <!--Iss se us field k ander show ho ga msg-->
+                </div>
+                @* <p><span>
             <style>
             p{
                 color:red;

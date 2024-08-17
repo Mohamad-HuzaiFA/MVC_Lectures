@@ -7,15 +7,16 @@ namespace MVC_letcures.Models
 {
     public class Student
     {
-        [Required]
+        [Required(ErrorMessage ="Please Enter Name")]
+        [StringLength(50)] 
         public string? Name { get; set; }
-        [Required]
-
+        [Required(ErrorMessage ="Please enter Rollno")]
         public string? Rollno { get; set; }
-        [Required]
-        public int Age { get; set; }
-        [Required]
-        public float CGPA { get; set; }
+        [Required(ErrorMessage = "Please enter Age")]
+        [Range(1, 100)]
+        public int? Age { get; set; }
+        [Required(ErrorMessage ="Enter your Semester")]
+        public float? CGPA { get; set; }
 
 
 

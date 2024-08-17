@@ -19,7 +19,7 @@ namespace MVC_letcures.Controllers
             //     string data = "This is dummy data passed to index";
             return View(listOfStu);
         }
-        
+
         [HttpGet] // when get request from client end
         public ViewResult StudentForm()
         {
@@ -28,6 +28,8 @@ namespace MVC_letcures.Controllers
         [HttpPost] //When post request from client end
         //public ViewResult StudentForm(string Name, string Rollno, int age, float cgpa)
         //{
+        //    if(ModelState.IsValid)
+        //    {
         //    Student temp = new Student();
         //    temp.Name = Name;
         //    temp.Rollno = Rollno;
@@ -39,12 +41,23 @@ namespace MVC_letcures.Controllers
         //    return View();
         //    //Console.WriteLine($"name = {Name},Rollno = {Rollno},Age = {age}, CGPA = {cgpa}");
         //}
+        //else 
+            //return View();
+        //}
         public ViewResult StudentForm(Student s)
         {
-            StudentRepository.AddStudentsInMemory(s);
+            if (ModelState.IsValid)
+            {
+                StudentRepository.AddStudentsInMemory(s);
 
-            return View("Thanks",s);
-            //Console.WriteLine($"name = {Name},Rollno = {Rollno},Age = {age}, CGPA = {cgpa}");
+                return View("Thanks", s);
+                //Console.WriteLine($"name = {Name},Rollno = {Rollno},Age = {age}, CGPA = {cgpa}");
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Please Enter Correct Data"); //For generic Msg 
+                return View();
+            }
         }
 
         public ViewResult ListStudents()
